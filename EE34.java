@@ -10,6 +10,7 @@ public class EE34 {
 	}
 	
 	public static void main(String[] args) {
+		System.out.println("Entrez une phrase : ");
 		Scanner sc = new Scanner(System.in);
 		String sentence = sc.nextLine();
 		split(sentence);

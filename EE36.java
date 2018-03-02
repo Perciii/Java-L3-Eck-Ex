@@ -13,18 +13,17 @@ public class EE36{
 		return count;
 	}
 	
-	public static List<Integer> nbWithMaxDivisors(){
-		//int[] numberOfDivisorsTab = new int[10000];
+	public static List<Integer> nbWithMaxDivisors(int maxLim){
 		List<Integer> numberOfDivisorsTab = new ArrayList<Integer>();
 		List<Integer> nbWithMaxDivisors = new ArrayList<Integer>();
 		
-		for(int i = 0; i < 10000; i++){
+		for(int i = 0; i < maxLim; i++){
 			numberOfDivisorsTab.add(numberOfDivisors(i + 1));
 		}
 		
 		int maxNumberOfDivisors = Collections.max(numberOfDivisorsTab);
 		
-		for(int i = 0;  i < 10000; i++){
+		for(int i = 0;  i < maxLim; i++){
 			int cur = numberOfDivisorsTab.get(i);
 			if (cur == maxNumberOfDivisors){
 				nbWithMaxDivisors.add(i+1);
@@ -33,9 +32,9 @@ public class EE36{
 		return nbWithMaxDivisors;
 	}
 	
-	public static void display(List<Integer> nbWithMaxDivisors){
+	public static void display(List<Integer> nbWithMaxDivisors, int maxLim){
 		int maxNbDivisors = numberOfDivisors(nbWithMaxDivisors.get(0));
-		System.out.println("Among integers between 1 and 10000,");
+		System.out.format("Among integers between 1 and %d,\n", maxLim);
 		System.out.println("The maximum number of divisors was "+ maxNbDivisors);
 		System.out.println("Numbers with that many divisors include:");
 		for(int nb : nbWithMaxDivisors){
@@ -44,7 +43,7 @@ public class EE36{
 	}
 	
 	public static void main(String[] args){ 
-		display(nbWithMaxDivisors());
+		display(nbWithMaxDivisors(10000), 10000);
 	}
 
 }

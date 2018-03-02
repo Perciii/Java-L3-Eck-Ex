@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+/** Exercice 4.7
+ * @author quentinsauvage
+ */
 public class EE47{
 
     private static int[] nb1;
@@ -12,6 +14,10 @@ public class EE47{
         grade(size);
     }
     
+    /** generates numbers that will be part of the additions to calculate
+     * and initializes the array of the answers
+     * @param size the number of couples of numbers to generate
+     */
     public static void generateQuizz(int size)
     {
         nb1 = new int[size];
@@ -26,6 +32,9 @@ public class EE47{
     
     }
     
+    /** generates the quizz from previously generated numbers
+     * @param nbOfQuestions
+     */
     public static void quizz(int nbOfQuestions)
     {
     	generateQuizz(nbOfQuestions);
@@ -47,6 +56,9 @@ public class EE47{
         }
     }
     
+    /** calculates the score of the player based on his answers
+     * @param size the number of questions in the quizz
+     */
     public static void grade(int size)
     {
         int score = 0;
